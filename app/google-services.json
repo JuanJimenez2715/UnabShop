@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885904031421",
+    "project_id": "loginfarebase-11c33",
+    "storage_bucket": "loginfarebase-11c33.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885904031421:android:19348a82af4d0f445ac1d4",
+        "android_client_info": {
+          "package_name": "me.juanjimenez.unabshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpnxST-3eZdjDUJpTuHKJq_oazSGkCbPY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
