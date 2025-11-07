@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "204114936652",
+    "project_id": "tiendaapp-f1ca7",
+    "storage_bucket": "tiendaapp-f1ca7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204114936652:android:64c3b1c52a2454e9b485e9",
+        "android_client_info": {
+          "package_name": "me.juanjimenez.unabshop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2n-JJvT5x3zRT6bIWWX8aMxr1cdfvagY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

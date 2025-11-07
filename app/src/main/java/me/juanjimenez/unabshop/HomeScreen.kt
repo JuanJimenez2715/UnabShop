@@ -31,7 +31,7 @@ import com.google.firebase.auth.auth
 @Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(onClickLogout: () -> Unit) {
+fun HomeScreen(onClickLogout: () -> Unit = {}) {
 
     val auth = Firebase.auth
     val user = auth.currentUser
