@@ -28,13 +28,16 @@ import androidx.compose.ui.unit.sp
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 
+
+
 @Preview
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(onClickLogout: () -> Unit = {}) {
+fun HomeScreen(onClickLogout: () -> Unit = {}, onClickAgregarProducto: () -> Unit = {}) {
 
     val auth = Firebase.auth
     val user = auth.currentUser
+
 
     Scaffold(
         topBar = {
@@ -49,6 +52,9 @@ fun HomeScreen(onClickLogout: () -> Unit = {}) {
                 actions = {
                     IconButton(onClick = { }) {
                         Icon(Icons.Filled.Notifications, "Notificaciones")
+                    }
+                    IconButton(onClick = { /* Navegar a AgregarProductoScreen */ }) {
+                        Icon(Icons.Filled.ShoppingCart, "Agregar producto")
                     }
                     IconButton(onClick = { }) {
                         Icon(Icons.Filled.ShoppingCart, "Carrito")
@@ -96,6 +102,14 @@ fun HomeScreen(onClickLogout: () -> Unit = {}) {
                 ){
                     Text("Cerrar Sesión")
                 }
+                Button(
+                        onClick = { onClickAgregarProducto() },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFF4CAF50)
+                )
+                ) {
+                Text("Agregar Producto")
+            }
 
 
 

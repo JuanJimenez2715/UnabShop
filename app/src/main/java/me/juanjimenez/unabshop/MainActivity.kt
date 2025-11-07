@@ -16,6 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            ->
 
             val navController = rememberNavController()
             var startDestination = "login"
@@ -23,38 +24,50 @@ class MainActivity : ComponentActivity() {
             val auth = Firebase.auth
             val currentUser = auth.currentUser
 
-            if (currentUser != null){
+            if (currentUser != null) {
                 startDestination = "home"
-            }else{
+            } else {
                 startDestination = "login"
             }
 
-            NavHost(navController,startDestination){
-                composable(route= "login"){
+            NavHost(navController, startDestination) {
+                composable(route = "login") {
                     LoginScreen(onClickRegister = {
                         navController.navigate("register")
-                    },onSuccessfulLogin = {
-                        navController.navigate("home"){
-                            popUpTo("login"){inclusive = true}
+                    }, onSuccessfulLogin = {
+                        navController.navigate("home") {
+                            popUpTo("login") { inclusive = true }
                         }
 
                     })
                 }
-                composable(route="register") {
-                    RegisterScreen(onClickBack= {
+                composable(route = "register") {
+                    RegisterScreen(onClickBack = {
                         navController.popBackStack()
                     }, onSuccessfulRegister = {
-                        navController.navigate("home"){
+                        navController.navigate("home") {
                             popUpTo(0)
                         }
                     })
                 }
-                composable(route="home") {
-                    HomeScreen(onClickLogout = {
-                        navController.navigate("login"){
-                            popUpTo(0)
-                        }
+                composable(route = "home") {
+                    HomeScreen(
+                        onClickLogout = {
+                            navController.navigate("login") {
+                                popUpTo(0)
+                            }
 
+                        },
+                        onClickAgregarProducto = { // 👈 añadimos este callback
+                            navController.navigate("agregarProducto")
+                        }
+                    )
+                }
+
+                // 🟢 Nueva pantalla
+                composable(route = "agregarProducto") {
+                    AgregarProductoScreen(onClickBack = {
+                        navController.popBackStack() // vuelve al home
                     })
                 }
             }

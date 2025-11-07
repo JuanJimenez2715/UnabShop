@@ -5,15 +5,11 @@ plugins {
     id("com.android.application")
     kotlin("android")
 
-
-
-
-
 }
 
 android {
     namespace = "me.juanjimenez.unabshop"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "me.juanjimenez.unabshop"
